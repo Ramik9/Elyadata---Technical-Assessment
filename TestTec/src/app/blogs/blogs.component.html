@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" *ngFor="let blog of blogs; let i = index"  >
+            <div class="card my-4" [ngClass]="{'my_class': blog.upvote > blog.downvote, 'my_class2' : blog.upvote<blog.downvote }">
+                
+                <div class="card-body">
+                    <h5 class="card-title">{{blog.title}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{blog.author}}</h6>
+                    <p class="card-text">{{blog.content}}</p>
+                    
+                    <a [routerLink]="['blog',blog._id]" class="card-link">Read more</a>
+                    <div class="vote">
+                        <h6>upvote {{blog.upvote}}</h6>
+                        <h6>downvote {{blog.downvote}}</h6>
+                    </div>
+                    <div class="vote">
+                       
+                        <button type="button" class="btn btn-success" (click)="upVote(blog._id)">upvote</button>
+                        <button type="button" class="btn btn-danger"(click)="downVote(blog._id)">downvote</button>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

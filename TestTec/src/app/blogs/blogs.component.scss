@@ -1,0 +1,15 @@
+.vote{
+    display: grid;
+grid-auto-flow: column;
+grid-column-gap: 10px;
+  }
+
+.my_class{
+    border-color: green;
+    border-width: 5px;
+}
+
+.my_class2{
+    border-color: red;
+    border-width: 5px;
+}
